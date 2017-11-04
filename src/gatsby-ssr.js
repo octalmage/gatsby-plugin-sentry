@@ -19,7 +19,7 @@ const SentryInstall = ({ dsn }) => (
 
 exports.onRenderBody = ({ setHeadComponents }, { version, dsn }) => {
   return setHeadComponents([
-    <SentryCdn version={version} />,
-    <SentryInstall dsn={dsn} />,
+    <SentryCdn version={version} key="gatsby-plugin-sentry-cdn" />,
+    <SentryInstall dsn={dsn} key="gatsby-plugin-sentry-install" />,
   ]);
 };
