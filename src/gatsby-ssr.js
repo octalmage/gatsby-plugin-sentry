@@ -52,12 +52,16 @@ SentryCdn.defaultProps = {
 };
 
 exports.onRenderBody = ({ setHeadComponents }, { version, dsn, config }) => {
-  return setHeadComponents([
-    <SentryCdn dsn={dsn} version={version} key="gatsby-plugin-sentry-cdn" />,
-    <SentryInstall
-      dsn={dsn}
-      config={config}
-      key="gatsby-plugin-sentry-install"
-    />,
-  ]);
+  if (process.env.NODE_ENV === `production`) {
+    return setHeadComponents([
+      <SentryCdn dsn={dsn} version={version} key="gatsby-plugin-sentry-cdn" />,
+      <SentryInstall
+        dsn={dsn}
+        config={config}
+        key="gatsby-plugin-sentry-install"
+      />,
+    ]);
+  }
+  
+  return null;
 };

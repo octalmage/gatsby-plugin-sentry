@@ -1,7 +1,7 @@
 {
   "name": "gatsby-plugin-sentry",
   "description": "Gatsby plugin to add Sentry error tracking to your site.",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Jason Stallings <jason.stallin.gs>",
   "repository": {
     "type": "git",
