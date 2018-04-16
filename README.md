@@ -17,7 +17,11 @@ plugins: [
     options: {
       dsn: 'YOUR_SENTRY_DSN_URL',
       // Raven.js version, this is optional.
-      version: '3.19.1'
+      version: '3.19.1',
+      // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
+      config: {
+        environment: 'staging'
+      }
     },
   },
 ]
