@@ -6,7 +6,7 @@ const SentryInstall = ({ dsn, config = {} }) => {
     <script
       type="text/javascript"
       dangerouslySetInnerHTML={{
-        __html: `Raven.config('${dsn}', ${JSON.stringify(config)}).install();`,
+        __html: `window.sentry_config = { dsn: '${dsn}', additional_config: ${JSON.stringify(config)} }`,
       }}
     />
   ) : null;
@@ -33,6 +33,6 @@ exports.onRenderBody = ({ setHeadComponents }, { version, dsn, config }) => {
       />,
     ]);
   }
-  
+
   return null;
 };
