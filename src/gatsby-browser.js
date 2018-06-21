@@ -1,9 +1,8 @@
-import Raven    from "raven-js";
+import Raven from "raven-js";
 
-exports.onClientEntry = () => {
-    if (window && process.env.NODE_ENV === "production" && window.sentry_config) {
+exports.onClientEntry = (_, pluginParams) => {
+    if (window && process.env.NODE_ENV === "production" && pluginParams.dsn) {
         window.Raven = Raven;
-
-        window.Raven.config(window.sentry_config.dsn, window.sentry_config.additional_config).install();
+        window.Raven.config(pluginParams.dsn, pluginParams.config || {}).install();
     }
 };

@@ -16,8 +16,9 @@ plugins: [
     resolve: 'gatsby-plugin-sentry',
     options: {
       dsn: 'YOUR_SENTRY_DSN_URL',
-      // Raven.js version, this is optional.
-      version: '3.19.1'
+      config: {
+          // Additional config that will be passed to Raven.config
+      }
     },
   },
 ]
