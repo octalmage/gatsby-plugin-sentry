@@ -16,8 +16,9 @@ plugins: [
     resolve: 'gatsby-plugin-sentry',
     options: {
       dsn: 'YOUR_SENTRY_DSN_URL',
+      // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
       config: {
-          // Additional config that will be passed to Raven.config
+        environment: 'staging'
       }
     },
   },
