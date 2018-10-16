@@ -18,7 +18,9 @@ plugins: [
       dsn: 'YOUR_SENTRY_DSN_URL',
       // Optional settings, see https://docs.sentry.io/clients/node/config/#optional-settings
       config: {
-        environment: 'staging'
+        environment: process.env.NODE_ENV,
+        // if shouldSendCallback returns false, sentry won't log error, https://docs.sentry.io/clients/javascript/config/#shouldSendCallback
+        shouldSendCallback: () => ['production', 'stage'].indexOf(process.env.NODE_ENV) !== -1
       }
     },
   },
