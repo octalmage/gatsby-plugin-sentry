@@ -25,7 +25,7 @@ plugins: [
 ];
 ```
 
-Now `Sentry` is availble in global window object. so you can use it in `react 16` like:
+Now `Sentry` is available in global window object. so you can use it in `react 16` like:
 
 ```javascript
 export default class ErrorBoundary extends React.Component {
