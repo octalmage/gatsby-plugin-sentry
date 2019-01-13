@@ -1,5 +1,7 @@
 # gatsby-plugin-sentry
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/octalmage/gatsby-plugin-sentry.svg)](https://greenkeeper.io/)
+
 Gatsby plugin to add Sentry error tracking to your site.
 
 Learn more about Sentry [here](https://sentry.io).
